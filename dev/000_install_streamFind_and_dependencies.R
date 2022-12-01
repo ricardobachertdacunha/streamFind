@@ -9,9 +9,11 @@ install.packages(c(
     "plotly",
     "cli", #needed for tests
     "shiny",
+    "htmltools",
     "golem",
     "RaMS",
     "rJava",
+    "sortable",
     "igraph" #needed for annotation
 ))
 # rJava needed for patRoon
