@@ -81,6 +81,48 @@ Password: rstudio
 
 Option 3: Run Both Shiny App and RStudio Server
 
+## Docker Setup for ipe-harbor.fzi.de
+
+Pull the Docker Image
+
+Before starting, pull the latest version of the Docker image from your Harbor repository:
+
+``` r
+docker pull ipe-harbor.fzi.de/streamfind/docker:latest
+```
+
+Start the Container
+
+To run the container, use the following command to set up port mappings and mount the current working directory into the container:
+
+
+``` r
+docker run -it -p 3838:3838 -p 8787:8787 -v $(pwd):/app ipe-harbor.fzi.de/streamfind/docker:latest
+```
+
+Note: Ensure ports 3838 and 8787 are free before starting. If port 8787 is already in use, replace it with an alternative port (e.g., 8888:8787).
+
+Service Options
+
+Once the container is running, select the service you want to launch:
+
+Option 1: Run Shiny App
+Starts the Shiny application, accessible at http://localhost:3838.
+
+Option 2: Run RStudio Server
+Starts the RStudio Server, accessible at http://localhost:8787.
+
+Default credentials:
+
+Username: rstudio
+
+Password: rstudio
+
+Option 3:
+
+Run Both Shiny App and RStudio Server
+Both applications will run concurrently, available at their respective ports.
+
 
 ## Other dependencies
 
